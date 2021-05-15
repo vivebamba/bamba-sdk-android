@@ -1,0 +1,3 @@
+.git
+excluded.txt
+settings.gradle
