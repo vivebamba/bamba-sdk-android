@@ -12,36 +12,36 @@
 
 package com.vivebamba.sdk.model;
 
+import com.vivebamba.sdk.model.AdvisorUser;
+import com.vivebamba.sdk.model.Message;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class Message {
+public class AdvisorMessageRequest {
   
-  @SerializedName("type")
-  private String type = null;
+  @SerializedName("customer")
+  private AdvisorUser customer = null;
   @SerializedName("message")
-  private String message = null;
+  private Message message = null;
 
   /**
-   * Message type
    **/
-  @ApiModelProperty(required = true, value = "Message type")
-  public String getType() {
-    return type;
+  @ApiModelProperty(required = true, value = "")
+  public AdvisorUser getCustomer() {
+    return customer;
   }
-  public void setType(String type) {
-    this.type = type;
+  public void setCustomer(AdvisorUser customer) {
+    this.customer = customer;
   }
 
   /**
-   * The text of the message
    **/
-  @ApiModelProperty(required = true, value = "The text of the message")
-  public String getMessage() {
+  @ApiModelProperty(required = true, value = "")
+  public Message getMessage() {
     return message;
   }
-  public void setMessage(String message) {
+  public void setMessage(Message message) {
     this.message = message;
   }
 
@@ -54,15 +54,15 @@ public class Message {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Message message = (Message) o;
-    return (this.type == null ? message.type == null : this.type.equals(message.type)) &&
-        (this.message == null ? message.message == null : this.message.equals(message.message));
+    AdvisorMessageRequest advisorMessageRequest = (AdvisorMessageRequest) o;
+    return (this.customer == null ? advisorMessageRequest.customer == null : this.customer.equals(advisorMessageRequest.customer)) &&
+        (this.message == null ? advisorMessageRequest.message == null : this.message.equals(advisorMessageRequest.message));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.type == null ? 0: this.type.hashCode());
+    result = 31 * result + (this.customer == null ? 0: this.customer.hashCode());
     result = 31 * result + (this.message == null ? 0: this.message.hashCode());
     return result;
   }
@@ -70,9 +70,9 @@ public class Message {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Message {\n");
+    sb.append("class AdvisorMessageRequest {\n");
     
-    sb.append("  type: ").append(type).append("\n");
+    sb.append("  customer: ").append(customer).append("\n");
     sb.append("  message: ").append(message).append("\n");
     sb.append("}\n");
     return sb.toString();

@@ -57,6 +57,14 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
+    if ("AdvisorMessageRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AdvisorMessageRequest>>(){}.getType();
+    }
+    
+    if ("AdvisorUser".equalsIgnoreCase(className)) {
+      return new TypeToken<List<AdvisorUser>>(){}.getType();
+    }
+    
     if ("Customer".equalsIgnoreCase(className)) {
       return new TypeToken<List<Customer>>(){}.getType();
     }
@@ -67,6 +75,10 @@ public class JsonUtil {
     
     if ("InlineResponse200".equalsIgnoreCase(className)) {
       return new TypeToken<List<InlineResponse200>>(){}.getType();
+    }
+    
+    if ("InlineResponse2001".equalsIgnoreCase(className)) {
+      return new TypeToken<List<InlineResponse2001>>(){}.getType();
     }
     
     if ("Message".equalsIgnoreCase(className)) {
@@ -99,6 +111,14 @@ public class JsonUtil {
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
+    if ("AdvisorMessageRequest".equalsIgnoreCase(className)) {
+      return new TypeToken<AdvisorMessageRequest>(){}.getType();
+    }
+    
+    if ("AdvisorUser".equalsIgnoreCase(className)) {
+      return new TypeToken<AdvisorUser>(){}.getType();
+    }
+    
     if ("Customer".equalsIgnoreCase(className)) {
       return new TypeToken<Customer>(){}.getType();
     }
@@ -109,6 +129,10 @@ public class JsonUtil {
     
     if ("InlineResponse200".equalsIgnoreCase(className)) {
       return new TypeToken<InlineResponse200>(){}.getType();
+    }
+    
+    if ("InlineResponse2001".equalsIgnoreCase(className)) {
+      return new TypeToken<InlineResponse2001>(){}.getType();
     }
     
     if ("Message".equalsIgnoreCase(className)) {

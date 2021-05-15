@@ -1,3 +1,4 @@
 .git
 excluded.txt
 settings.gradle
+.gitignore

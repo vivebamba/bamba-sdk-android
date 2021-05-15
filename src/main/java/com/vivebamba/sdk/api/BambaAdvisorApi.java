@@ -23,8 +23,9 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import com.vivebamba.sdk.model.AdvisorMessageRequest;
 import com.vivebamba.sdk.model.ErrorResponse;
-import com.vivebamba.sdk.model.Message;
+import com.vivebamba.sdk.model.InlineResponse2001;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -36,7 +37,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-public class BambaAgentApi {
+public class BambaAdvisorApi {
   String basePath = "https://sandbox.vivebamba.com/v1";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -57,16 +58,16 @@ public class BambaAgentApi {
   }
 
   /**
-  * Bamba agent
-  * All related with Bamba Agent
-   * @param message 
-   * @return void
+  * Send messages to the Bamba Advisor
+  * Send mesages to the Bamba Advisor from new or existing customers
+   * @param advisorMessageRequest 
+   * @return InlineResponse2001
   */
-  public void bambaAgentMessagePost (Message message) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = message;
+  public InlineResponse2001 advisorMessagePost (AdvisorMessageRequest advisorMessageRequest) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = advisorMessageRequest;
 
     // create path and map variables
-    String path = "/bamba-agent/message";
+    String path = "/advisor/message";
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -93,9 +94,9 @@ public class BambaAgentApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return ;
+         return (InlineResponse2001) ApiInvoker.deserialize(localVarResponse, "", InlineResponse2001.class);
       } else {
-         return ;
+         return null;
       }
     } catch (ApiException ex) {
        throw ex;
@@ -115,16 +116,16 @@ public class BambaAgentApi {
   }
 
       /**
-   * Bamba agent
-   * All related with Bamba Agent
-   * @param message 
+   * Send messages to the Bamba Advisor
+   * Send mesages to the Bamba Advisor from new or existing customers
+   * @param advisorMessageRequest 
   */
-  public void bambaAgentMessagePost (Message message, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = message;
+  public void advisorMessagePost (AdvisorMessageRequest advisorMessageRequest, final Response.Listener<InlineResponse2001> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = advisorMessageRequest;
 
 
     // create path and map variables
-    String path = "/bamba-agent/message".replaceAll("\\{format\\}","json");
+    String path = "/advisor/message".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -158,7 +159,11 @@ public class BambaAgentApi {
         new Response.Listener<String>() {
           @Override
           public void onResponse(String localVarResponse) {
-              responseListener.onResponse(localVarResponse);
+            try {
+              responseListener.onResponse((InlineResponse2001) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse2001.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
           }
       }, new Response.ErrorListener() {
           @Override

@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.vivebamba</groupId>
     <artifactId>bamba-sdk-android</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.5</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.vivebamba:bamba-sdk-android:1.0.0"
+compile "com.vivebamba:bamba-sdk-android:1.0.5"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/bamba-sdk-android-1.0.0.jar
+- target/bamba-sdk-android-1.0.5.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -58,17 +58,18 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.vivebamba.sdk.api.BambaAgentApi;
+import com.vivebamba.sdk.api.BambaAdvisorApi;
 
-public class BambaAgentApiExample {
+public class BambaAdvisorApiExample {
 
     public static void main(String[] args) {
-        BambaAgentApi apiInstance = new BambaAgentApi();
-        Message message = new Message(); // Message | 
+        BambaAdvisorApi apiInstance = new BambaAdvisorApi();
+        AdvisorMessageRequest advisorMessageRequest = new AdvisorMessageRequest(); // AdvisorMessageRequest | 
         try {
-            apiInstance.bambaAgentMessagePost(message);
+            InlineResponse2001 result = apiInstance.advisorMessagePost(advisorMessageRequest);
+            System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling BambaAgentApi#bambaAgentMessagePost");
+            System.err.println("Exception when calling BambaAdvisorApi#advisorMessagePost");
             e.printStackTrace();
         }
     }
@@ -82,17 +83,19 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BambaAgentApi* | [**bambaAgentMessagePost**](docs/BambaAgentApi.md#bambaAgentMessagePost) | **POST** /bamba-agent/message | Bamba agent
-*CustomerApi* | [**customerCustomerIdServiceGet**](docs/CustomerApi.md#customerCustomerIdServiceGet) | **GET** /customer/{customerId}/service | Get customer services
+*BambaAdvisorApi* | [**advisorMessagePost**](docs/BambaAdvisorApi.md#advisorMessagePost) | **POST** /advisor/message | Send messages to the Bamba Advisor
 *StoreApi* | [**storeOrdersPost**](docs/StoreApi.md#storeOrdersPost) | **POST** /store/orders | Place an order
 *StoreApi* | [**storeProductsGet**](docs/StoreApi.md#storeProductsGet) | **GET** /store/products | Get products
 
 
 ## Documentation for Models
 
+ - [AdvisorMessageRequest](docs/AdvisorMessageRequest.md)
+ - [AdvisorUser](docs/AdvisorUser.md)
  - [Customer](docs/Customer.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [InlineResponse200](docs/InlineResponse200.md)
+ - [InlineResponse2001](docs/InlineResponse2001.md)
  - [Message](docs/Message.md)
  - [Order](docs/Order.md)
  - [OrderProducts](docs/OrderProducts.md)
