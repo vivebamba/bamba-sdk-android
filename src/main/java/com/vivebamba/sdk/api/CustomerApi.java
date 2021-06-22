@@ -24,9 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import com.vivebamba.sdk.model.ErrorResponse;
-import com.vivebamba.sdk.model.InlineResponse200;
-import com.vivebamba.sdk.model.Order;
-import com.vivebamba.sdk.model.Product;
+import com.vivebamba.sdk.model.Subscription;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -38,7 +36,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 
-public class StoreApi {
+public class CustomerApi {
   String basePath = "https://sandbox.vivebamba.com/v1";
   ApiInvoker apiInvoker = ApiInvoker.getInstance();
 
@@ -59,133 +57,21 @@ public class StoreApi {
   }
 
   /**
-  * Place an order
-  * Place an order
-   * @param order 
-   * @return InlineResponse200
+  * Get customer services
+  * Get all customer services
+   * @param customerId Bamba customer unique identifier
+   * @return Subscription
   */
-  public InlineResponse200 storeOrdersPost (Order order) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
-    Object postBody = order;
-
-    // create path and map variables
-    String path = "/store/orders";
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-    String[] contentTypes = {
-      "application/json"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-    }
-
-    String[] authNames = new String[] { "ApiKeyAuth" };
-
-    try {
-      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
-      if (localVarResponse != null) {
-         return (InlineResponse200) ApiInvoker.deserialize(localVarResponse, "", InlineResponse200.class);
-      } else {
-         return null;
-      }
-    } catch (ApiException ex) {
-       throw ex;
-    } catch (InterruptedException ex) {
-       throw ex;
-    } catch (ExecutionException ex) {
-      if (ex.getCause() instanceof VolleyError) {
-        VolleyError volleyError = (VolleyError)ex.getCause();
-        if (volleyError.networkResponse != null) {
-          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
-        }
-      }
-      throw ex;
-    } catch (TimeoutException ex) {
-      throw ex;
-    }
-  }
-
-      /**
-   * Place an order
-   * Place an order
-   * @param order 
-  */
-  public void storeOrdersPost (Order order, final Response.Listener<InlineResponse200> responseListener, final Response.ErrorListener errorListener) {
-    Object postBody = order;
-
-
-    // create path and map variables
-    String path = "/store/orders".replaceAll("\\{format\\}","json");
-
-    // query params
-    List<Pair> queryParams = new ArrayList<Pair>();
-    // header params
-    Map<String, String> headerParams = new HashMap<String, String>();
-    // form params
-    Map<String, String> formParams = new HashMap<String, String>();
-
-
-
-    String[] contentTypes = {
-      "application/json"
-    };
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    if (contentType.startsWith("multipart/form-data")) {
-      // file uploading
-      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
-      
-
-      HttpEntity httpEntity = localVarBuilder.build();
-      postBody = httpEntity;
-    } else {
-      // normal form params
-          }
-
-    String[] authNames = new String[] { "ApiKeyAuth" };
-
-    try {
-      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
-        new Response.Listener<String>() {
-          @Override
-          public void onResponse(String localVarResponse) {
-            try {
-              responseListener.onResponse((InlineResponse200) ApiInvoker.deserialize(localVarResponse,  "", InlineResponse200.class));
-            } catch (ApiException exception) {
-               errorListener.onErrorResponse(new VolleyError(exception));
-            }
-          }
-      }, new Response.ErrorListener() {
-          @Override
-          public void onErrorResponse(VolleyError error) {
-            errorListener.onErrorResponse(error);
-          }
-      });
-    } catch (ApiException ex) {
-      errorListener.onErrorResponse(new VolleyError(ex));
-    }
-  }
-  /**
-  * Get products
-  * Retrieve all products
-   * @return List<Product>
-  */
-  public List<Product> storeProductsGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Subscription customerCustomerIdServicesGet (Integer customerId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
+    // verify the required parameter 'customerId' is set
+    if (customerId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'customerId' when calling customerCustomerIdServicesGet",
+        new ApiException(400, "Missing the required parameter 'customerId' when calling customerCustomerIdServicesGet"));
+    }
 
     // create path and map variables
-    String path = "/store/products";
+    String path = "/customer/{customerId}/services".replaceAll("\\{" + "customerId" + "\\}", apiInvoker.escapeString(customerId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -211,7 +97,7 @@ public class StoreApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<Product>) ApiInvoker.deserialize(localVarResponse, "array", Product.class);
+         return (Subscription) ApiInvoker.deserialize(localVarResponse, "", Subscription.class);
       } else {
          return null;
       }
@@ -233,16 +119,21 @@ public class StoreApi {
   }
 
       /**
-   * Get products
-   * Retrieve all products
-
+   * Get customer services
+   * Get all customer services
+   * @param customerId Bamba customer unique identifier
   */
-  public void storeProductsGet (final Response.Listener<List<Product>> responseListener, final Response.ErrorListener errorListener) {
+  public void customerCustomerIdServicesGet (Integer customerId, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
+    // verify the required parameter 'customerId' is set
+    if (customerId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'customerId' when calling customerCustomerIdServicesGet",
+        new ApiException(400, "Missing the required parameter 'customerId' when calling customerCustomerIdServicesGet"));
+    }
 
     // create path and map variables
-    String path = "/store/products".replaceAll("\\{format\\}","json");
+    String path = "/customer/{customerId}/services".replaceAll("\\{format\\}","json").replaceAll("\\{" + "customerId" + "\\}", apiInvoker.escapeString(customerId.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -277,7 +168,145 @@ public class StoreApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<Product>) ApiInvoker.deserialize(localVarResponse,  "array", Product.class));
+              responseListener.onResponse((Subscription) ApiInvoker.deserialize(localVarResponse,  "", Subscription.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Cancel customer services
+  * Cancel customer services
+   * @param customerId Bamba customer unique identifier
+   * @param sku Service sku
+   * @return Subscription
+  */
+  public Subscription customerCustomerIdServicesSkuCancelGet (String customerId, String sku) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+    // verify the required parameter 'customerId' is set
+    if (customerId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'customerId' when calling customerCustomerIdServicesSkuCancelGet",
+        new ApiException(400, "Missing the required parameter 'customerId' when calling customerCustomerIdServicesSkuCancelGet"));
+    }
+    // verify the required parameter 'sku' is set
+    if (sku == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'sku' when calling customerCustomerIdServicesSkuCancelGet",
+        new ApiException(400, "Missing the required parameter 'sku' when calling customerCustomerIdServicesSkuCancelGet"));
+    }
+
+    // create path and map variables
+    String path = "/customer/{customerId}/services/{sku}/cancel".replaceAll("\\{" + "customerId" + "\\}", apiInvoker.escapeString(customerId.toString())).replaceAll("\\{" + "sku" + "\\}", apiInvoker.escapeString(sku.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    String[] contentTypes = {
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] { "ApiKeyAuth" };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (Subscription) ApiInvoker.deserialize(localVarResponse, "", Subscription.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Cancel customer services
+   * Cancel customer services
+   * @param customerId Bamba customer unique identifier   * @param sku Service sku
+  */
+  public void customerCustomerIdServicesSkuCancelGet (String customerId, String sku, final Response.Listener<Subscription> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+    // verify the required parameter 'customerId' is set
+    if (customerId == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'customerId' when calling customerCustomerIdServicesSkuCancelGet",
+        new ApiException(400, "Missing the required parameter 'customerId' when calling customerCustomerIdServicesSkuCancelGet"));
+    }
+    // verify the required parameter 'sku' is set
+    if (sku == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'sku' when calling customerCustomerIdServicesSkuCancelGet",
+        new ApiException(400, "Missing the required parameter 'sku' when calling customerCustomerIdServicesSkuCancelGet"));
+    }
+
+    // create path and map variables
+    String path = "/customer/{customerId}/services/{sku}/cancel".replaceAll("\\{format\\}","json").replaceAll("\\{" + "customerId" + "\\}", apiInvoker.escapeString(customerId.toString())).replaceAll("\\{" + "sku" + "\\}", apiInvoker.escapeString(sku.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] { "ApiKeyAuth" };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((Subscription) ApiInvoker.deserialize(localVarResponse,  "", Subscription.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

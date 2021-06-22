@@ -6,6 +6,7 @@ docs/AdvisorMessageRequest.md
 docs/AdvisorUser.md
 docs/BambaAdvisorApi.md
 docs/Customer.md
+docs/CustomerApi.md
 docs/ErrorResponse.md
 docs/InlineResponse200.md
 docs/InlineResponse2001.md
@@ -16,6 +17,7 @@ docs/Product.md
 docs/ProductBundleItems.md
 docs/Service.md
 docs/StoreApi.md
+docs/Subscription.md
 git_push.sh
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
@@ -28,6 +30,7 @@ src/main/java/com/vivebamba/sdk/ApiInvoker.java
 src/main/java/com/vivebamba/sdk/JsonUtil.java
 src/main/java/com/vivebamba/sdk/Pair.java
 src/main/java/com/vivebamba/sdk/api/BambaAdvisorApi.java
+src/main/java/com/vivebamba/sdk/api/CustomerApi.java
 src/main/java/com/vivebamba/sdk/api/StoreApi.java
 src/main/java/com/vivebamba/sdk/auth/ApiKeyAuth.java
 src/main/java/com/vivebamba/sdk/auth/Authentication.java
@@ -44,6 +47,7 @@ src/main/java/com/vivebamba/sdk/model/OrderProducts.java
 src/main/java/com/vivebamba/sdk/model/Product.java
 src/main/java/com/vivebamba/sdk/model/ProductBundleItems.java
 src/main/java/com/vivebamba/sdk/model/Service.java
+src/main/java/com/vivebamba/sdk/model/Subscription.java
 src/main/java/com/vivebamba/sdk/request/DeleteRequest.java
 src/main/java/com/vivebamba/sdk/request/GetRequest.java
 src/main/java/com/vivebamba/sdk/request/PatchRequest.java

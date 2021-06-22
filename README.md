@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.vivebamba</groupId>
     <artifactId>bamba-sdk-android</artifactId>
-    <version>1.0.5</version>
+    <version>1.2.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.vivebamba:bamba-sdk-android:1.0.5"
+compile "com.vivebamba:bamba-sdk-android:1.2.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/bamba-sdk-android-1.0.5.jar
+- target/bamba-sdk-android-1.2.0.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -84,22 +84,10 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BambaAdvisorApi* | [**advisorMessagePost**](docs/BambaAdvisorApi.md#advisorMessagePost) | **POST** /advisor/message | Send messages to the Bamba Advisor
+*CustomerApi* | [**customerCustomerIdServicesGet**](docs/CustomerApi.md#customerCustomerIdServicesGet) | **GET** /customer/{customerId}/services | Get customer services
+*CustomerApi* | [**customerCustomerIdServicesSkuCancelGet**](docs/CustomerApi.md#customerCustomerIdServicesSkuCancelGet) | **GET** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
 *StoreApi* | [**storeOrdersPost**](docs/StoreApi.md#storeOrdersPost) | **POST** /store/orders | Place an order
 *StoreApi* | [**storeProductsGet**](docs/StoreApi.md#storeProductsGet) | **GET** /store/products | Get products
-
-
-### Bamba Advisor
-
-The advisor Bamba follows the basic concept of communication:
-
-Send a message: Sender sends a message to Bamba Advisor
-Receive the response: Bamba Advisor sends the response to Issuer
-
-You can send a message to the Bamba advisor using the advisorMessagePost method, then you need to listen for the response to your message, to achieve this it is necessary that you expose in your application a url (webhook) where the advisor can send you the responses to your messages.
-
-This webhook should wait for notification via POST.
-
-Once you have the url where you want to receive the responses from the Bamba advisor, send us the url by email to desarrollo@vivebamba.com so that we can register the webhook for your integration and you can receive the responses.
 
 
 ## Documentation for Models
@@ -116,6 +104,7 @@ Once you have the url where you want to receive the responses from the Bamba adv
  - [Product](docs/Product.md)
  - [ProductBundleItems](docs/ProductBundleItems.md)
  - [Service](docs/Service.md)
+ - [Subscription](docs/Subscription.md)
 
 
 ## Documentation for Authorization
