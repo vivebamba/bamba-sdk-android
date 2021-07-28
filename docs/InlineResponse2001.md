@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **String** |  |  [optional]
+**success** | **Boolean** |  |  [optional]
 
 
 
