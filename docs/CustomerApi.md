@@ -5,7 +5,7 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**customerCustomerIdServicesGet**](CustomerApi.md#customerCustomerIdServicesGet) | **GET** /customer/{customerId}/services | Get customer services
-[**customerCustomerIdServicesSkuCancelGet**](CustomerApi.md#customerCustomerIdServicesSkuCancelGet) | **GET** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
+[**customerCustomerIdServicesSkuCancelPut**](CustomerApi.md#customerCustomerIdServicesSkuCancelPut) | **PUT** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
 
 
 
@@ -55,9 +55,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## customerCustomerIdServicesSkuCancelGet
+## customerCustomerIdServicesSkuCancelPut
 
-> Subscription customerCustomerIdServicesSkuCancelGet(customerId, sku)
+> Subscription customerCustomerIdServicesSkuCancelPut(customerId, sku)
 
 Cancel customer services
 
@@ -73,10 +73,10 @@ CustomerApi apiInstance = new CustomerApi();
 String customerId = null; // String | Bamba customer unique identifier
 String sku = null; // String | Service sku
 try {
-    Subscription result = apiInstance.customerCustomerIdServicesSkuCancelGet(customerId, sku);
+    Subscription result = apiInstance.customerCustomerIdServicesSkuCancelPut(customerId, sku);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CustomerApi#customerCustomerIdServicesSkuCancelGet");
+    System.err.println("Exception when calling CustomerApi#customerCustomerIdServicesSkuCancelPut");
     e.printStackTrace();
 }
 ```
