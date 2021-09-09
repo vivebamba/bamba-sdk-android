@@ -13,6 +13,7 @@ docs/InlineResponse2001.md
 docs/Message.md
 docs/Order.md
 docs/OrderProducts.md
+docs/PaymentParams.md
 docs/Product.md
 docs/ProductBundleItems.md
 docs/Service.md
@@ -44,6 +45,7 @@ src/main/java/com/vivebamba/sdk/model/InlineResponse2001.java
 src/main/java/com/vivebamba/sdk/model/Message.java
 src/main/java/com/vivebamba/sdk/model/Order.java
 src/main/java/com/vivebamba/sdk/model/OrderProducts.java
+src/main/java/com/vivebamba/sdk/model/PaymentParams.java
 src/main/java/com/vivebamba/sdk/model/Product.java
 src/main/java/com/vivebamba/sdk/model/ProductBundleItems.java
 src/main/java/com/vivebamba/sdk/model/Service.java

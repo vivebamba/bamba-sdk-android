@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.vivebamba</groupId>
     <artifactId>bamba-sdk-android</artifactId>
-    <version>1.2.5</version>
+    <version>1.2.6</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.vivebamba:bamba-sdk-android:1.2.5"
+compile "com.vivebamba:bamba-sdk-android:1.2.6"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/bamba-sdk-android-1.2.5.jar
+- target/bamba-sdk-android-1.2.6.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -101,6 +101,7 @@ Class | Method | HTTP request | Description
  - [Message](docs/Message.md)
  - [Order](docs/Order.md)
  - [OrderProducts](docs/OrderProducts.md)
+ - [PaymentParams](docs/PaymentParams.md)
  - [Product](docs/Product.md)
  - [ProductBundleItems](docs/ProductBundleItems.md)
  - [Service](docs/Service.md)
