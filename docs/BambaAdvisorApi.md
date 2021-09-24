@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1AdvisorMessagePost**](BambaAdvisorApi.md#v1AdvisorMessagePost) | **POST** /v1/advisor/message | Send messages to the Bamba Advisor
+[**advisorMessagePost**](BambaAdvisorApi.md#advisorMessagePost) | **POST** /advisor/message | Send messages to the Bamba Advisor
 
 
 
-## v1AdvisorMessagePost
+## advisorMessagePost
 
-> InlineResponse2001 v1AdvisorMessagePost(advisorMessageRequest)
+> InlineResponse2001 advisorMessagePost(advisorMessageRequest)
 
 Send messages to the Bamba Advisor
 
@@ -25,10 +25,10 @@ Send mesages to the Bamba Advisor from new or existing customers
 BambaAdvisorApi apiInstance = new BambaAdvisorApi();
 AdvisorMessageRequest advisorMessageRequest = new AdvisorMessageRequest(); // AdvisorMessageRequest | 
 try {
-    InlineResponse2001 result = apiInstance.v1AdvisorMessagePost(advisorMessageRequest);
+    InlineResponse2001 result = apiInstance.advisorMessagePost(advisorMessageRequest);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BambaAdvisorApi#v1AdvisorMessagePost");
+    System.err.println("Exception when calling BambaAdvisorApi#advisorMessagePost");
     e.printStackTrace();
 }
 ```

@@ -4,14 +4,14 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1StoreOrdersPost**](StoreApi.md#v1StoreOrdersPost) | **POST** /v1/store/orders | Place an order
-[**v1StoreProductsGet**](StoreApi.md#v1StoreProductsGet) | **GET** /v1/store/products | Get products
+[**storeOrdersPost**](StoreApi.md#storeOrdersPost) | **POST** /store/orders | Place an order
+[**storeProductsGet**](StoreApi.md#storeProductsGet) | **GET** /store/products | Get products
 
 
 
-## v1StoreOrdersPost
+## storeOrdersPost
 
-> InlineResponse200 v1StoreOrdersPost(order)
+> InlineResponse200 storeOrdersPost(order)
 
 Place an order
 
@@ -26,10 +26,10 @@ Place an order
 StoreApi apiInstance = new StoreApi();
 Order order = new Order(); // Order | 
 try {
-    InlineResponse200 result = apiInstance.v1StoreOrdersPost(order);
+    InlineResponse200 result = apiInstance.storeOrdersPost(order);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling StoreApi#v1StoreOrdersPost");
+    System.err.println("Exception when calling StoreApi#storeOrdersPost");
     e.printStackTrace();
 }
 ```
@@ -55,9 +55,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## v1StoreProductsGet
+## storeProductsGet
 
-> List&lt;Product&gt; v1StoreProductsGet()
+> List&lt;Product&gt; storeProductsGet()
 
 Get products
 
@@ -71,10 +71,10 @@ Retrieve all products
 
 StoreApi apiInstance = new StoreApi();
 try {
-    List<Product> result = apiInstance.v1StoreProductsGet();
+    List<Product> result = apiInstance.storeProductsGet();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling StoreApi#v1StoreProductsGet");
+    System.err.println("Exception when calling StoreApi#storeProductsGet");
     e.printStackTrace();
 }
 ```
