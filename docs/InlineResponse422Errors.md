@@ -1,12 +1,12 @@
 
 
-# ProductBundleItems
+# InlineResponse422Errors
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | **String** | The description of bundle content |  [optional]
+**field** | **List&lt;String&gt;** |  |  [optional]
 
 
 

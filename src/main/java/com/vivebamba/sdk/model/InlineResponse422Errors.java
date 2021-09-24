@@ -17,20 +17,19 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class ErrorResponse {
+public class InlineResponse422Errors {
   
-  @SerializedName("errors")
-  private List<String> errors = null;
+  @SerializedName("field")
+  private List<String> field = null;
 
   /**
-   * The error description
    **/
-  @ApiModelProperty(value = "The error description")
-  public List<String> getErrors() {
-    return errors;
+  @ApiModelProperty(value = "")
+  public List<String> getField() {
+    return field;
   }
-  public void setErrors(List<String> errors) {
-    this.errors = errors;
+  public void setField(List<String> field) {
+    this.field = field;
   }
 
 
@@ -42,23 +41,23 @@ public class ErrorResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorResponse errorResponse = (ErrorResponse) o;
-    return (this.errors == null ? errorResponse.errors == null : this.errors.equals(errorResponse.errors));
+    InlineResponse422Errors inlineResponse422Errors = (InlineResponse422Errors) o;
+    return (this.field == null ? inlineResponse422Errors.field == null : this.field.equals(inlineResponse422Errors.field));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.errors == null ? 0: this.errors.hashCode());
+    result = 31 * result + (this.field == null ? 0: this.field.hashCode());
     return result;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorResponse {\n");
+    sb.append("class InlineResponse422Errors {\n");
     
-    sb.append("  errors: ").append(errors).append("\n");
+    sb.append("  field: ").append(field).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -12,24 +12,24 @@
 
 package com.vivebamba.sdk.model;
 
+import com.vivebamba.sdk.model.InlineResponse422Errors;
 import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class ErrorResponse {
+public class InlineResponse4221 {
   
   @SerializedName("errors")
-  private List<String> errors = null;
+  private List<InlineResponse422Errors> errors = null;
 
   /**
-   * The error description
    **/
-  @ApiModelProperty(value = "The error description")
-  public List<String> getErrors() {
+  @ApiModelProperty(value = "")
+  public List<InlineResponse422Errors> getErrors() {
     return errors;
   }
-  public void setErrors(List<String> errors) {
+  public void setErrors(List<InlineResponse422Errors> errors) {
     this.errors = errors;
   }
 
@@ -42,8 +42,8 @@ public class ErrorResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorResponse errorResponse = (ErrorResponse) o;
-    return (this.errors == null ? errorResponse.errors == null : this.errors.equals(errorResponse.errors));
+    InlineResponse4221 inlineResponse4221 = (InlineResponse4221) o;
+    return (this.errors == null ? inlineResponse4221.errors == null : this.errors.equals(inlineResponse4221.errors));
   }
 
   @Override
@@ -56,7 +56,7 @@ public class ErrorResponse {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorResponse {\n");
+    sb.append("class InlineResponse4221 {\n");
     
     sb.append("  errors: ").append(errors).append("\n");
     sb.append("}\n");
