@@ -113,12 +113,12 @@ public class JsonUtil {
       return new TypeToken<List<Product>>(){}.getType();
     }
     
-    if ("SectionWhatIncludes".equalsIgnoreCase(className)) {
-      return new TypeToken<List<SectionWhatIncludes>>(){}.getType();
+    if ("ProductDescription".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ProductDescription>>(){}.getType();
     }
     
-    if ("SectionWhatNotIncludes".equalsIgnoreCase(className)) {
-      return new TypeToken<List<SectionWhatNotIncludes>>(){}.getType();
+    if ("ProductDetails".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ProductDetails>>(){}.getType();
     }
     
     if ("Service".equalsIgnoreCase(className)) {
@@ -191,12 +191,12 @@ public class JsonUtil {
       return new TypeToken<Product>(){}.getType();
     }
     
-    if ("SectionWhatIncludes".equalsIgnoreCase(className)) {
-      return new TypeToken<SectionWhatIncludes>(){}.getType();
+    if ("ProductDescription".equalsIgnoreCase(className)) {
+      return new TypeToken<ProductDescription>(){}.getType();
     }
     
-    if ("SectionWhatNotIncludes".equalsIgnoreCase(className)) {
-      return new TypeToken<SectionWhatNotIncludes>(){}.getType();
+    if ("ProductDetails".equalsIgnoreCase(className)) {
+      return new TypeToken<ProductDetails>(){}.getType();
     }
     
     if ("Service".equalsIgnoreCase(className)) {

@@ -18,8 +18,8 @@ docs/Order.md
 docs/OrderProducts.md
 docs/PaymentParams.md
 docs/Product.md
-docs/SectionWhatIncludes.md
-docs/SectionWhatNotIncludes.md
+docs/ProductDescription.md
+docs/ProductDetails.md
 docs/Service.md
 docs/StoreApi.md
 docs/Subscription.md
@@ -54,8 +54,8 @@ src/main/java/com/vivebamba/sdk/model/Order.java
 src/main/java/com/vivebamba/sdk/model/OrderProducts.java
 src/main/java/com/vivebamba/sdk/model/PaymentParams.java
 src/main/java/com/vivebamba/sdk/model/Product.java
-src/main/java/com/vivebamba/sdk/model/SectionWhatIncludes.java
-src/main/java/com/vivebamba/sdk/model/SectionWhatNotIncludes.java
+src/main/java/com/vivebamba/sdk/model/ProductDescription.java
+src/main/java/com/vivebamba/sdk/model/ProductDetails.java
 src/main/java/com/vivebamba/sdk/model/Service.java
 src/main/java/com/vivebamba/sdk/model/Subscription.java
 src/main/java/com/vivebamba/sdk/request/DeleteRequest.java

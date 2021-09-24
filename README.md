@@ -106,8 +106,8 @@ Class | Method | HTTP request | Description
  - [OrderProducts](docs/OrderProducts.md)
  - [PaymentParams](docs/PaymentParams.md)
  - [Product](docs/Product.md)
- - [SectionWhatIncludes](docs/SectionWhatIncludes.md)
- - [SectionWhatNotIncludes](docs/SectionWhatNotIncludes.md)
+ - [ProductDescription](docs/ProductDescription.md)
+ - [ProductDetails](docs/ProductDetails.md)
  - [Service](docs/Service.md)
  - [Subscription](docs/Subscription.md)
 

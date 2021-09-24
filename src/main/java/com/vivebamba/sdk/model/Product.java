@@ -12,7 +12,7 @@
 
 package com.vivebamba.sdk.model;
 
-import com.vivebamba.sdk.model.AnyOfSectionWhatIncludesSectionWhatNotIncludes;
+import com.vivebamba.sdk.model.ProductDescription;
 import java.util.*;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -31,7 +31,7 @@ public class Product {
   @SerializedName("brief")
   private String brief = null;
   @SerializedName("description")
-  private List<AnyOfSectionWhatIncludesSectionWhatNotIncludes> description = null;
+  private List<ProductDescription> description = null;
   @SerializedName("terms")
   private String terms = null;
 
@@ -91,12 +91,13 @@ public class Product {
   }
 
   /**
+   * Commercial information of the product by sections, the number of elements of each array is dynamic
    **/
-  @ApiModelProperty(value = "")
-  public List<AnyOfSectionWhatIncludesSectionWhatNotIncludes> getDescription() {
+  @ApiModelProperty(value = "Commercial information of the product by sections, the number of elements of each array is dynamic")
+  public List<ProductDescription> getDescription() {
     return description;
   }
-  public void setDescription(List<AnyOfSectionWhatIncludesSectionWhatNotIncludes> description) {
+  public void setDescription(List<ProductDescription> description) {
     this.description = description;
   }
 

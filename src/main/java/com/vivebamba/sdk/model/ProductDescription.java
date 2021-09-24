@@ -12,18 +12,17 @@
 
 package com.vivebamba.sdk.model;
 
-import com.vivebamba.sdk.model.AnyOfobjectobject;
-import java.util.*;
+import com.vivebamba.sdk.model.ProductDetails;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class SectionWhatNotIncludes {
+public class ProductDescription {
   
   @SerializedName("section")
   private String section = null;
   @SerializedName("details")
-  private List<AnyOfobjectobject> details = null;
+  private ProductDetails details = null;
 
   /**
    * Section title
@@ -39,10 +38,10 @@ public class SectionWhatNotIncludes {
   /**
    **/
   @ApiModelProperty(value = "")
-  public List<AnyOfobjectobject> getDetails() {
+  public ProductDetails getDetails() {
     return details;
   }
-  public void setDetails(List<AnyOfobjectobject> details) {
+  public void setDetails(ProductDetails details) {
     this.details = details;
   }
 
@@ -55,9 +54,9 @@ public class SectionWhatNotIncludes {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SectionWhatNotIncludes sectionWhatNotIncludes = (SectionWhatNotIncludes) o;
-    return (this.section == null ? sectionWhatNotIncludes.section == null : this.section.equals(sectionWhatNotIncludes.section)) &&
-        (this.details == null ? sectionWhatNotIncludes.details == null : this.details.equals(sectionWhatNotIncludes.details));
+    ProductDescription productDescription = (ProductDescription) o;
+    return (this.section == null ? productDescription.section == null : this.section.equals(productDescription.section)) &&
+        (this.details == null ? productDescription.details == null : this.details.equals(productDescription.details));
   }
 
   @Override
@@ -71,7 +70,7 @@ public class SectionWhatNotIncludes {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SectionWhatNotIncludes {\n");
+    sb.append("class ProductDescription {\n");
     
     sb.append("  section: ").append(section).append("\n");
     sb.append("  details: ").append(details).append("\n");
