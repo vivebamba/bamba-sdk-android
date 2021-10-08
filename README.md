@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.vivebamba</groupId>
     <artifactId>bamba-sdk-android</artifactId>
-    <version>1.3.1</version>
+    <version>1.3.2</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.vivebamba:bamba-sdk-android:1.3.1"
+compile "com.vivebamba:bamba-sdk-android:1.3.2"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/bamba-sdk-android-1.3.1.jar
+- target/bamba-sdk-android-1.3.2.jar
 - target/lib/*.jar
 
 ## Getting Started
@@ -85,7 +85,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BambaAdvisorApi* | [**advisorMessagePost**](docs/BambaAdvisorApi.md#advisorMessagePost) | **POST** /advisor/message | Send messages to the Bamba Advisor
 *CustomerApi* | [**customerCustomerIdServicesGet**](docs/CustomerApi.md#customerCustomerIdServicesGet) | **GET** /customer/{customerId}/services | Get customer services
-*CustomerApi* | [**customerCustomerIdServicesSkuCancelPut**](docs/CustomerApi.md#customerCustomerIdServicesSkuCancelPut) | **PUT** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
+*CustomerApi* | [**customerCustomerIdServicesServiceIdCancelPut**](docs/CustomerApi.md#customerCustomerIdServicesServiceIdCancelPut) | **PUT** /customer/{customerId}/services/{serviceId}/cancel | Cancel customer services
 *StoreApi* | [**storeOrdersPost**](docs/StoreApi.md#storeOrdersPost) | **POST** /store/orders | Place an order
 *StoreApi* | [**storeProductsGet**](docs/StoreApi.md#storeProductsGet) | **GET** /store/products | Get products
 
@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 
  - [AdvisorMessageRequest](docs/AdvisorMessageRequest.md)
  - [AdvisorUser](docs/AdvisorUser.md)
+ - [CancellationResponse](docs/CancellationResponse.md)
  - [Customer](docs/Customer.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [InlineResponse200](docs/InlineResponse200.md)
@@ -107,9 +108,6 @@ Class | Method | HTTP request | Description
  - [PaymentParams](docs/PaymentParams.md)
  - [Product](docs/Product.md)
  - [ProductDescription](docs/ProductDescription.md)
- - [ProductDetails](docs/ProductDetails.md)
- - [Service](docs/Service.md)
- - [Subscription](docs/Subscription.md)
 
 
 ## Documentation for Authorization

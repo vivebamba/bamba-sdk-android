@@ -5,13 +5,13 @@ All URIs are relative to *https://sandbox.vivebamba.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**customerCustomerIdServicesGet**](CustomerApi.md#customerCustomerIdServicesGet) | **GET** /customer/{customerId}/services | Get customer services
-[**customerCustomerIdServicesSkuCancelPut**](CustomerApi.md#customerCustomerIdServicesSkuCancelPut) | **PUT** /customer/{customerId}/services/{sku}/cancel | Cancel customer services
+[**customerCustomerIdServicesServiceIdCancelPut**](CustomerApi.md#customerCustomerIdServicesServiceIdCancelPut) | **PUT** /customer/{customerId}/services/{serviceId}/cancel | Cancel customer services
 
 
 
 ## customerCustomerIdServicesGet
 
-> Subscription customerCustomerIdServicesGet(customerId)
+> List&lt;Object&gt; customerCustomerIdServicesGet(customerId)
 
 Get customer services
 
@@ -24,9 +24,9 @@ Get all customer services
 //import com.vivebamba.sdk.api.CustomerApi;
 
 CustomerApi apiInstance = new CustomerApi();
-Integer customerId = null; // Integer | Bamba customer unique identifier
+UUID customerId = d625aefa-73ba-4458-a107-5b3eea9f112b; // UUID | Bamba customer unique identifier
 try {
-    Subscription result = apiInstance.customerCustomerIdServicesGet(customerId);
+    List<Object> result = apiInstance.customerCustomerIdServicesGet(customerId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CustomerApi#customerCustomerIdServicesGet");
@@ -39,11 +39,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **Integer**| Bamba customer unique identifier | [default to null]
+ **customerId** | [**UUID**](.md)| Bamba customer unique identifier | [default to null]
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+**List&lt;Object&gt;**
 
 ### Authorization
 
@@ -55,9 +55,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## customerCustomerIdServicesSkuCancelPut
+## customerCustomerIdServicesServiceIdCancelPut
 
-> Subscription customerCustomerIdServicesSkuCancelPut(customerId, sku)
+> CancellationResponse customerCustomerIdServicesServiceIdCancelPut(customerId, serviceId)
 
 Cancel customer services
 
@@ -70,13 +70,13 @@ Cancel customer services
 //import com.vivebamba.sdk.api.CustomerApi;
 
 CustomerApi apiInstance = new CustomerApi();
-String customerId = null; // String | Bamba customer unique identifier
-String sku = null; // String | Service sku
+UUID customerId = d625aefa-73ba-4458-a107-5b3eea9f112b; // UUID | Bamba customer unique identifier
+UUID serviceId = null; // UUID | Service Id
 try {
-    Subscription result = apiInstance.customerCustomerIdServicesSkuCancelPut(customerId, sku);
+    CancellationResponse result = apiInstance.customerCustomerIdServicesServiceIdCancelPut(customerId, serviceId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CustomerApi#customerCustomerIdServicesSkuCancelPut");
+    System.err.println("Exception when calling CustomerApi#customerCustomerIdServicesServiceIdCancelPut");
     e.printStackTrace();
 }
 ```
@@ -86,12 +86,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | **String**| Bamba customer unique identifier | [default to null]
- **sku** | **String**| Service sku | [default to null]
+ **customerId** | [**UUID**](.md)| Bamba customer unique identifier | [default to null]
+ **serviceId** | [**UUID**](.md)| Service Id | [default to null]
 
 ### Return type
 
-[**Subscription**](Subscription.md)
+[**CancellationResponse**](CancellationResponse.md)
 
 ### Authorization
 
