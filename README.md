@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.vivebamba</groupId>
     <artifactId>bamba-sdk-android</artifactId>
-    <version>1.3.2</version>
+    <version>1.3.3</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.vivebamba:bamba-sdk-android:1.3.2"
+compile "com.vivebamba:bamba-sdk-android:1.3.3"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-- target/bamba-sdk-android-1.3.2.jar
+- target/bamba-sdk-android-1.3.3.jar
 - target/lib/*.jar
 
 ## Getting Started

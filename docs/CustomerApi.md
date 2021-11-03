@@ -24,7 +24,7 @@ Get all customer services
 //import com.vivebamba.sdk.api.CustomerApi;
 
 CustomerApi apiInstance = new CustomerApi();
-UUID customerId = d625aefa-73ba-4458-a107-5b3eea9f112b; // UUID | Bamba customer unique identifier
+String customerId = d625aefa-73ba-4458-a107-5b3eea9f112b; // String | Bamba customer unique identifier
 try {
     List<Object> result = apiInstance.customerCustomerIdServicesGet(customerId);
     System.out.println(result);
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | [**UUID**](.md)| Bamba customer unique identifier | [default to null]
+ **customerId** | **String**| Bamba customer unique identifier | [default to null]
 
 ### Return type
 
@@ -70,8 +70,8 @@ Cancel customer services
 //import com.vivebamba.sdk.api.CustomerApi;
 
 CustomerApi apiInstance = new CustomerApi();
-UUID customerId = d625aefa-73ba-4458-a107-5b3eea9f112b; // UUID | Bamba customer unique identifier
-UUID serviceId = null; // UUID | Service Id
+String customerId = d625aefa-73ba-4458-a107-5b3eea9f112b; // String | The customer UUID assigned by Bamba
+String serviceId = z625aefa-73ba-4458-a107-5b3eea9526a; // String | The service UUID to cancel assigned by Bamba
 try {
     CancellationResponse result = apiInstance.customerCustomerIdServicesServiceIdCancelPut(customerId, serviceId);
     System.out.println(result);
@@ -86,8 +86,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerId** | [**UUID**](.md)| Bamba customer unique identifier | [default to null]
- **serviceId** | [**UUID**](.md)| Service Id | [default to null]
+ **customerId** | **String**| The customer UUID assigned by Bamba | [default to null]
+ **serviceId** | **String**| The service UUID to cancel assigned by Bamba | [default to null]
 
 ### Return type
 

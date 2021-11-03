@@ -6,7 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**UUID**](UUID.md) |  |  [optional]
+**id** | **String** | UUID of the canceled service |  [optional]
 **name** | **String** | Benefit |  [optional]
 **brief** | **String** | Plan benefit summary |  [optional]
 **state** | **String** | Cancellation status |  [optional]
